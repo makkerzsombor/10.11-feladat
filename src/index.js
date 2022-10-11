@@ -1,22 +1,25 @@
 class Szazlabu{
+    //Nincs mellékhatása
     labakSzama;
     constructor(ujLabak){
         this.labakSzama = ujLabak;
     }
+    //Nincs mellékhatása
     toString() {
         let string = ' lábú százlábú';
         return this.labakSzama + string;
     }
+    //classon belüli meghívás: Van mellékhatása
     static labakbolSzazlabuk(t = []){
         return t.map(e => new Szazlabu(e));
     }    
 }
-//Feladat 5
+//Feladat 5 Van mellékhatása
 function labakbolSzazlabuk(t = []){
     return t.map(e => new Szazlabu(e));
 }  
 
-//Feladat 6
+//Feladat 6 Van mellékhatása
 function szazlabuMejelenites(stringID , lista = []){       
     lista.forEach((e, index) => {
         let szuloElem = document.getElementById(stringID); 
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lista.push(Math.floor(Math.random() * 30) + 1)
     }
     let lista5 = [];
-    // Feladat 2
+    // Feladat 2 Van mellékhatása
     document.getElementById('fel2').addEventListener('click', () => {    
         lista5 = [];    
         lista5.push(lista.filter(e => e % 5 == 0));
@@ -42,16 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
              console.log(index, e);
         })
     })   
-    // Feladat 3
+    // Feladat 3 Van mellékhatása
      document.getElementById('hozzaAd').addEventListener('click', () => {
         lista.push(parseInt(document.getElementById('bekertSzam').value));
      })
-     // Feladat 4
+     // Feladat 4 Van mellélhatása
      let sz = new Szazlabu(30);
      console.log(sz.toString());     
      // Feladat 6   
 
-     // classen belül szazlabuMejelenites('letrehozas', Szazlabu.labakbolSzazlabuk(lista));
-
+     // classon belül szazlabuMejelenites('letrehozas', Szazlabu.labakbolSzazlabuk(lista));
+     // classon kivüli: Van mellékhatása
      szazlabuMejelenites('letrehozas', labakbolSzazlabuk(lista));
 });
