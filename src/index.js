@@ -7,7 +7,9 @@ class Szazlabu{
         let string = ' lábú százlábú';
         return this.labakSzama + string;
     }
-    labakbolSzazlabuk()
+    labakbolSzazlabuk(t = []){
+        return t.map(e => new Szazlabu(e));
+    }
 }
 
 
@@ -33,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
      let sz = new Szazlabu(30);
      console.log(sz.toString());
      // Feladat 5
+     
 });
