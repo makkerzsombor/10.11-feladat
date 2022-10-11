@@ -1,25 +1,25 @@
-class Szazlabu{
-    //Nincs mellékhatása
+class Szazlabu{    
     labakSzama;
+    // Tiszta
     constructor(ujLabak){
         this.labakSzama = ujLabak;
     }
-    //Nincs mellékhatása
+    // 
     toString() {
         let string = ' lábú százlábú';
         return this.labakSzama + string;
     }
-    //classon belüli meghívás: Van mellékhatása
+    //classon belüli meghívás: Nem tiszta
     static labakbolSzazlabuk(t = []){
         return t.map(e => new Szazlabu(e));
     }    
 }
-//Feladat 5 Van mellékhatása
+//Feladat 5 Nem tiszta
 function labakbolSzazlabuk(t = []){
     return t.map(e => new Szazlabu(e));
 }  
 
-//Feladat 6 Van mellékhatása
+//Feladat 6 Nem Tiszta
 function szazlabuMejelenites(stringID , lista = []){       
     lista.forEach((e, index) => {
         let szuloElem = document.getElementById(stringID); 
@@ -30,14 +30,14 @@ function szazlabuMejelenites(stringID , lista = []){
         szuloElem.appendChild(listaElem); 
     });             
 }
-
+// Nem Tiszta
 document.addEventListener('DOMContentLoaded', () => {
     let lista = [];
     for (let i = 0; i < 20; i++) {
         lista.push(Math.floor(Math.random() * 30) + 1)
     }
     let lista5 = [];
-    // Feladat 2 Van mellékhatása
+    // Feladat 2 Nem tiszta
     document.getElementById('fel2').addEventListener('click', () => {    
         lista5 = [];    
         lista5.push(lista.filter(e => e % 5 == 0));
@@ -45,16 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
              console.log(index, e);
         })
     })   
-    // Feladat 3 Van mellékhatása
+    // Feladat 3 Nem Tiszta
      document.getElementById('hozzaAd').addEventListener('click', () => {
         lista.push(parseInt(document.getElementById('bekertSzam').value));
      })
-     // Feladat 4 Van mellélhatása
+     // Feladat 4 Nem Tiszta
      let sz = new Szazlabu(30);
      console.log(sz.toString());     
      // Feladat 6   
 
      // classon belül szazlabuMejelenites('letrehozas', Szazlabu.labakbolSzazlabuk(lista));
-     // classon kivüli: Van mellékhatása
+     // classon kivüli: Tiszta
      szazlabuMejelenites('letrehozas', labakbolSzazlabuk(lista));
 });
