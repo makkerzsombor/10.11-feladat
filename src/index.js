@@ -7,11 +7,26 @@ class Szazlabu{
         let string = ' lábú százlábú';
         return this.labakSzama + string;
     }
-    labakbolSzazlabuk(t = []){
+    static labakbolSzazlabuk(t = []){
         return t.map(e => new Szazlabu(e));
-    }
+    }    
 }
+//Feladat 5
+function labakbolSzazlabuk(t = []){
+    return t.map(e => new Szazlabu(e));
+}  
 
+//Feladat 6
+function szazlabuMejelenites(stringID , lista = []){       
+    lista.forEach((e, index) => {
+        let szuloElem = document.getElementById(stringID); 
+        let listaElem = document.createElement('li');
+        let listaElemText = document.createElement('p');
+        listaElemText.textContent = e.toString();
+        listaElem.appendChild(listaElemText);
+        szuloElem.appendChild(listaElem); 
+    });             
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     let lista = [];
@@ -33,7 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
      })
      // Feladat 4
      let sz = new Szazlabu(30);
-     console.log(sz.toString());
-     // Feladat 5
-     
+     console.log(sz.toString());     
+     // Feladat 6   
+
+     // classen belül szazlabuMejelenites('letrehozas', Szazlabu.labakbolSzazlabuk(lista));
+
+     szazlabuMejelenites('letrehozas', labakbolSzazlabuk(lista));
 });
