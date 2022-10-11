@@ -34,7 +34,7 @@ function szazlabuMejelenites(stringID , lista = []){
 document.addEventListener('DOMContentLoaded', () => {
     let lista = [];
     for (let i = 0; i < 20; i++) {
-        lista.push(Math.floor(Math.random() * 30) + 1)
+        lista.push(Math.floor(Math.random() * 29) + 1)
     }
     let lista5 = [];
     // Feladat 2 Nem tiszta
