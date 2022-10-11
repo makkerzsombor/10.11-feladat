@@ -1,3 +1,11 @@
+class Szazlabu{
+    labakSzama = 100;
+    constructor(ujLabak){
+        this.labakSzama = ujLabak;
+    }
+
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let lista = [];
@@ -12,5 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lista5.forEach((e, index) => {
              console.log(index, e);
         })
-    })    
+    })   
+    // Feladat 3
+     document.getElementById('hozzaAd').addEventListener('click', () => {
+        lista.push(parseInt(document.getElementById('bekertSzam').value));
+     })
+     // Feladat 4
+
 });
