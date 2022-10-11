@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < lista.length; i++) {
         if (lista[i] % 5 == 0) {
             lista5.push(lista[i])
-            console.log(lista[i])
         }
     }
+    lista5.forEach((e, index) => {
+         console.log(index, e);
+    })
 });
