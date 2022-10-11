@@ -1,9 +1,13 @@
 class Szazlabu{
-    labakSzama = 100;
+    labakSzama;
     constructor(ujLabak){
         this.labakSzama = ujLabak;
     }
-
+    toString() {
+        let string = ' lábú százlábú';
+        return this.labakSzama + string;
+    }
+    labakbolSzazlabuk()
 }
 
 
@@ -26,5 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lista.push(parseInt(document.getElementById('bekertSzam').value));
      })
      // Feladat 4
-
+     let sz = new Szazlabu(30);
+     console.log(sz.toString());
+     // Feladat 5
 });
